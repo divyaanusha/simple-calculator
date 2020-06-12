@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>calculator</title>
+    <style>
+        .title1 {
+            background-color: rgb(250, 179, 0);
+            font-weight: 900;
+            color: white;
+            height: 108px;
+            padding: 19px;
+            align-items: center;
+        }
+
+        .display-style::-webkit-input-placeholder {
+            color: rgb(177, 175, 175);
+            font-style: italic;
+            font-size: small;
+        }
+
+        .background-style {
+            background-color: black;
+            margin: 40px 370px 150px 370px;
+            width: 350px;
+            height: 420px;
+        }
+
+        .display-style {
+            background-color: black;
+            border-radius: 39px;
+            width: 322px;
+            height: 110px;
+            margin-bottom: 16px;
+            border-color: black;
+            color: white;
+            font-size: xxx-large;
+        }
+
+        .button-style {
+            border-radius: 50%;
+            font-size: 30px;
+            border-color: white;
+            width: 51px;
+            margin-bottom: 17px;
+            margin-right: 13px;
+            margin-left: 13px;
+        }
+
+        .button-style:hover {
+            transform: scale(1.2);
+        }
+    </style>
+    <script>
+        var b;
+        var num1, num2, num;
+        var op;
+        function clear1() {
+            document.getElementById("input1").value = " ";
+
+        }
+        function enter(a) {
+            //alert("clicker");
+            b = document.getElementById("input1").value;
+            b = b + a;
+            document.getElementById("input1").value = b;
+        }
+        function add() {
+            num1 = Number(b)
+            document.getElementById("input1").value = " ";
+            op = "+";
+        }
+        function subtract() {
+            num1 = Number(b)
+            document.getElementById("input1").value = " ";
+            op = "-";
+        }
+        function multiply() {
+            num1 = Number(b)
+            document.getElementById("input1").value = " ";
+            op = "*";
+        }
+        function division() {
+            num1 = Number(b)
+            document.getElementById("input1").value = " ";
+            op = "/";
+        }
+        function calculate() {
+            num2 = Number(b)
+            switch (op) {
+                case "+":
+                    // code block
+                    num = num1 + num2;
+                    break;
+                case "-":
+                    // code block
+                    num = num1 - num2;
+                    break;
+                case "*":
+                    // code block
+                    num = num1 * num2;
+                    break;
+                case "/":
+                    // code block
+                    num = num1 / num2;
+                    break;
+            }
+            document.getElementById("input1").value = num;
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <h1 class="title1">CALCULATOR</h1>
+    </div>
+    <div class="container background-style">
+        <div class="display-style form-group">
+            <input class="display-style form-control" id="input1" placeholder="Enter the number" />
+        </div>
+        <div>
+            <button type="button" class="btn btn-light button-style" onclick="enter(1)">1</button>
+            <button type="button" class="btn btn-light button-style" onclick="enter(2)">2</button>
+            <button type="button" class="btn btn-light button-style" onclick="enter(3)">3</button>
+            <button type="button" class="btn btn-light button-style" style="background-color: rgb(250, 179, 0);"
+                onclick="add()">+</button>
+            <br>
+            <button type="button" class="btn btn-light button-style" onclick="enter(4)">4</button>
+            <button type="button" class="btn btn-light button-style" onclick="enter(5)">5</button>
+            <button type="button" class="btn btn-light button-style" onclick="enter(6)">6</button>
+            <button type="button" class="btn btn-light button-style" style="background-color: rgb(250, 179, 0);"
+                onclick="subtract()">-</button>
+            <br>
+            <button type="button" class="btn btn-light button-style" onclick="enter(7)">7</button>
+            <button type="button" class="btn btn-light button-style" onclick="enter(8)">8</button>
+            <button type="button" class="btn btn-light button-style" onclick="enter(9)">9</button>
+            <button type="button" class="btn btn-light button-style" style="background-color: rgb(250, 179, 0);"
+                onclick="multiply()">*</button>
+            <br>
+            <button type="button" class="btn btn-light button-style" style="background-color: rgb(250, 179, 0);"
+                onclick="clear1()">c</button>
+            <button type="button" class="btn btn-light button-style">0</button>
+            <button type="button" class="btn btn-light button-style" style="background-color: rgb(250, 179, 0);"
+                onclick="calculate()">=</button>
+            <button type="button" class="btn btn-light button-style" style="background-color: rgb(250, 179, 0);"
+                onclick="division()">/</button>
+        </div>
+    </div>
+</body>
+
+</html>
